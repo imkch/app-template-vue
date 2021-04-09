@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><!--[if IE]><link rel="icon" href="/app-template-vue/dist/favicon.ico"><![endif]--><title>app-template-vue</title><style>html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+      }
+      #app {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .app-loading-contaner {
+        z-index: -3;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+      }
+      .app-loading {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .app-loading img {
+        width: 40px;
+        height: 40px;
+      }
+      .app-loading::before {
+        z-index: -2;
+        content: '';
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(#000, #000), linear-gradient(#999, #999), linear-gradient(#333, #333), linear-gradient(#666, #666);
+        animation: rotate 1s linear infinite;
+      }
+      .app-loading::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        background: white;
+      }
+      @keyframes rotate {
+        100% {
+          -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
+        }
+      }
+      .svg-sprites {
+        display: none;
+      }</style><link href="/app-template-vue/dist/css/app.a541d92b.css" rel="preload" as="style"><link href="/app-template-vue/dist/css/chunk-vendors.670e1ca1.css" rel="preload" as="style"><link href="/app-template-vue/dist/js/app.1ca17087.js" rel="preload" as="script"><link href="/app-template-vue/dist/js/chunk-vendors.3c341943.js" rel="preload" as="script"><link href="/app-template-vue/dist/css/chunk-vendors.670e1ca1.css" rel="stylesheet"><link href="/app-template-vue/dist/css/app.a541d92b.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/app-template-vue/dist/img/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/app-template-vue/dist/img/icons/favicon-16x16.png"><link rel="manifest" href="/app-template-vue/dist/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="app-template-vue"><link rel="apple-touch-icon" href="/app-template-vue/dist/img/icons/apple-touch-icon-152x152.png"><link rel="mask-icon" href="/app-template-vue/dist/img/icons/safari-pinned-tab.svg" color="#4DBA87"><meta name="msapplication-TileImage" content="/app-template-vue/dist/img/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"></head><body><noscript><strong>We're sorry but app-template-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="svg-sprites"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol viewBox="0 0 180 180" id="icon-logo"><title>未命名</title><desc>Created with Sketch.</desc><g id="icon-logo_页面-1" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M180,0 L180,180 L0,180 L0,0 L180,0 Z M144,36 L90,36 L36,90 L90,144 L144,144 C114.176624,144 90,119.823376 90,90 C90,60.1766235 114.176624,36 144,36 L144,36 Z" id="icon-logo_形状结合"/></g></symbol></defs></svg></div><div id="app"><div class="app-loading-contaner"><div class="app-loading"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAPKADAAQAAAABAAAAPAAAAACL3+lcAAAC60lEQVRoBe3azY4pQRQA4GPuRUSsLKyExAtIJBJWEpGIpRdgPy/hLcSOB2BraYGwIPETkVjaMINMBCHi594j6cRkOjN9qquqM3RtepTSdb461V3VhiUWi13hicrLE1lvVBP86Bk3M2xm+MFGwJzSD5bQLxwzw1+G5MEqni7Df41IYCaTgWw2S+p6s9lAu92GTqcDb29vsFqtYLlcwuFwIJ1HOpiKrdfrUKlUYDAYwOVyIeHUGksFU7DD4RAKhQKMRiO1uJnrpIG1Ys/nM+TzeSiXy8yo7z4oBawVu91uIZfLQbfb/S5mXe8JB1Owr6+vMJ1OdYF++rDQZUkrFqcxZlY0FgdDGFgrFoPAa1bkNMY+lCIETMHi3VjUDUpB3h+5gylYDASXHpmFK5iKxU0F73X2p8HjBqZiMTDcQckuXMAsWNwb43ZRdtENZsEistVqcdkbUwdMF5gVi0HiU48RhRmsB4vQ9/d3I7xsGw+9WJTi86wRhZxhHliE4sO7EYUM5hWkxWLhdSrSecjgUqkExWKR1IlaY7fbrVYtvI4Mxoh4oH8VmAfa4/EIz6ZaB3/8fn9O7Q0tdf1+/9YsGAxqaf6pzX6/h0aj8alOxgumKX0fGOv0jkQi8PKiu/v7UDT9rSvDSg8smbbb7dDr9WA+nyunkXLkAsZIWdBOpxNqtZoUqNIJNzAL2ufz3fbUi8VCiUf4kSuYBe31eqFarQqHKh1wB1PRuDzh99Hj8ViJSehRCJiKDoVCt696ZrOZUCyeXBiYgsblKRqNQrPZhPV6LRQtFExB22w2SCQSMJlMQGSmhYOp6Hg8DrvdTtg1LQVMQeP0DofDgNc1/uuF95IlDUxBY1u8e6dSKQgEAvDx8XH7Suh61f/DX6lgKhrb4+YkmUxCOp2G/w864HA4wOVygdVqhePxCKfTCZtpLhbz99Kax+p3NpT/fGbwOJlggxMgvHszw8KH2OAOzAwbnADh3ZsZFj7EBnfwdBn+B4bQIJjIJ0U4AAAAAElFTkSuQmCC" alt="logo"></div></div></div><script src="/app-template-vue/dist/js/chunk-vendors.3c341943.js"></script><script src="/app-template-vue/dist/js/app.1ca17087.js"></script></body></html>

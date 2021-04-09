@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+      }
+      #app {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .app-loading-contaner {
+        z-index: -3;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: #f2f2f2;
+      }
+      .app-loading {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .app-loading img {
+        width: 40px;
+        height: 40px;
+      }
+      .app-loading::before {
+        z-index: -2;
+        content: '';
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(#000, #000), linear-gradient(#999, #999), linear-gradient(#333, #333), linear-gradient(#666, #666);
+        animation: rotate 1s linear infinite;
+      }
+      .app-loading::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        background: white;
+      }
+      @keyframes rotate {
+        100% {
+          -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
+        }
+      }
+      .svg-sprites {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div class="svg-sprites">
+      <% if (htmlWebpackPlugin.files.sprites) { %>
+        <% for (var spriteFileName in htmlWebpackPlugin.files.sprites) { %>
+          <%= htmlWebpackPlugin.files.sprites[spriteFileName] %>
+        <% } %>
+      <% } %>
+    </div>
+    <div id="app">
+      <div class="app-loading-contaner">
+        <div class="app-loading">
+          <!-- 保证初始化loading正常显示，使用base64编码 -->
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAPKADAAQAAAABAAAAPAAAAACL3+lcAAAC60lEQVRoBe3azY4pQRQA4GPuRUSsLKyExAtIJBJWEpGIpRdgPy/hLcSOB2BraYGwIPETkVjaMINMBCHi594j6cRkOjN9qquqM3RtepTSdb461V3VhiUWi13hicrLE1lvVBP86Bk3M2xm+MFGwJzSD5bQLxwzw1+G5MEqni7Df41IYCaTgWw2S+p6s9lAu92GTqcDb29vsFqtYLlcwuFwIJ1HOpiKrdfrUKlUYDAYwOVyIeHUGksFU7DD4RAKhQKMRiO1uJnrpIG1Ys/nM+TzeSiXy8yo7z4oBawVu91uIZfLQbfb/S5mXe8JB1Owr6+vMJ1OdYF++rDQZUkrFqcxZlY0FgdDGFgrFoPAa1bkNMY+lCIETMHi3VjUDUpB3h+5gylYDASXHpmFK5iKxU0F73X2p8HjBqZiMTDcQckuXMAsWNwb43ZRdtENZsEistVqcdkbUwdMF5gVi0HiU48RhRmsB4vQ9/d3I7xsGw+9WJTi86wRhZxhHliE4sO7EYUM5hWkxWLhdSrSecjgUqkExWKR1IlaY7fbrVYtvI4Mxoh4oH8VmAfa4/EIz6ZaB3/8fn9O7Q0tdf1+/9YsGAxqaf6pzX6/h0aj8alOxgumKX0fGOv0jkQi8PKiu/v7UDT9rSvDSg8smbbb7dDr9WA+nyunkXLkAsZIWdBOpxNqtZoUqNIJNzAL2ufz3fbUi8VCiUf4kSuYBe31eqFarQqHKh1wB1PRuDzh99Hj8ViJSehRCJiKDoVCt696ZrOZUCyeXBiYgsblKRqNQrPZhPV6LRQtFExB22w2SCQSMJlMQGSmhYOp6Hg8DrvdTtg1LQVMQeP0DofDgNc1/uuF95IlDUxBY1u8e6dSKQgEAvDx8XH7Suh61f/DX6lgKhrb4+YkmUxCOp2G/w864HA4wOVygdVqhePxCKfTCZtpLhbz99Kax+p3NpT/fGbwOJlggxMgvHszw8KH2OAOzAwbnADh3ZsZFj7EBnfwdBn+B4bQIJjIJ0U4AAAAAElFTkSuQmCC" alt="logo">
+        </div>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

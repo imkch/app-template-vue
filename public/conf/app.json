@@ -1,0 +1,9 @@
+{
+  "name": "基于VUE 2.x搭建的应用基础模板，开箱即用",
+  "development": {
+    "baseApi": "//127.0.0.1:7001"
+  },
+  "production": {
+    "baseApi": "//imkch.com/api"
+  }
+}
