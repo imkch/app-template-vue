@@ -3,13 +3,13 @@ import Vue from 'vue';
 import { Rate } from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
-const viewDesignComponets = {
+const viewDesignComponentMap = {
   'Rate': Rate
 };
 
 // 按需加载view design组件
-Object.keys(viewDesignComponets).forEach(key => {
-  Vue.component(key, viewDesignComponets[key]);
+Object.keys(viewDesignComponentMap).forEach(key => {
+  Vue.component(key, viewDesignComponentMap[key]);
 });
 
 // 检索目录下的模块
