@@ -3,7 +3,7 @@
 基于VUE 2.x搭建的应用基础模板，开箱即用。
 ## 特征
 
-- view-design组件库
+- view-design组件库按需加载
 - tailwindcss自定义样式库
 - svg图标
 - gzip压缩打包文件
