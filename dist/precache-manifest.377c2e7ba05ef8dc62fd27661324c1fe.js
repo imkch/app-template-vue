@@ -36,7 +36,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/app-template-vue/dist/img/sprite.svg"
   },
   {
-    "revision": "81072117524103cb9a3ccf84fdd8598a",
+    "revision": "4108aa97ba9bf12e31cca2f97325545f",
     "url": "/app-template-vue/dist/index.html"
   },
   {
