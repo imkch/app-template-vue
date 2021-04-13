@@ -3,7 +3,7 @@
  * @Date: 2020-11-09 20:56:05
  * @LastEditors: G.TAO
  * @LastEditTime: 2020-11-09 22:45:50
- * @Description: 
+ * @Description:
  */
 module.exports = {
   extends: ['@commitlint/config-conventional', 'cz'],
@@ -15,12 +15,12 @@ module.exports = {
     'subject-case': [
       2,
       'never',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
+      ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
     ],
     'subject-empty': [0],
     'subject-full-stop': [2, 'never', '.'],
     'type-case': [0],
     'type-empty': [0],
-    'type-enum': [0],
-  },
+    'type-enum': [0]
+  }
 };

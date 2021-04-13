@@ -12,6 +12,16 @@ const routes = [
   }
 ];
 
+if (process.env.NODE_ENV === 'development') {
+  routes.push(
+    {
+      path: '/svg',
+      name: 'Svg',
+      component: () => import('@/views/svg-viewer')
+    }
+  );
+}
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

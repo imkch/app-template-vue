@@ -4,6 +4,9 @@
     <rate disabled v-model="rateValue" class="ml-2"/>
     <h1 class="text-3xl font-bold m-2"><a class="underline" href="//imkch.com" target="_blank">坤尘 ▪ 记</a></h1>
     <h2 class="text-lg">思绪如风，总会在某处停留<br>用轻灵的文字书写关于技术生活的奇思妙想</h2>
+    <div class="flex m-2 text-blue-500">
+      <router-link to="svg">图标预览</router-link>
+    </div>
   </div>
 </template>
 <script>
