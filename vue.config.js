@@ -1,6 +1,7 @@
 const CompressionPlugin = require('compression-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const LodashPlugin = require("lodash-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
       ]);
     }
     config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
+    config.plugin('LodashPlugin').use(new LodashPlugin());
   },
   pluginOptions: {
     svgSpriteLoader: {

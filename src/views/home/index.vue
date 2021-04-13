@@ -8,12 +8,16 @@
 </template>
 <script>
 
+import _ from 'lodash';
 export default {
   name: 'Home',
   data() {
     return {
       rateValue: 4.9
     };
+  },
+  mounted() {
+    console.log(_.toLower('Hello World!'));
   }
 };
 </script>
