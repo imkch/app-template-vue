@@ -5,7 +5,7 @@ const LodashPlugin = require('lodash-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/app-template-vue/dist/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-app-template/dist/' : '/',
   productionSourceMap: false,
   chainWebpack: config => {
     config.plugin('SpriteLoaderPlugin').use(SpriteLoaderPlugin, [

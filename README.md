@@ -1,4 +1,4 @@
-# app-template-vue
+# vue-app-template
 
 基于VUE 2.x搭建的应用基础模板，开箱即用。
 ## 特征
